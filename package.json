@@ -9,7 +9,7 @@
     "test:watch": "turbo run test:watch",
     "test:coverage": "turbo run test --coverage",
     "test:fruit-machine": "turbo run test --filter=@ampr/fruit-machine",
-    "test:retry-utils": "turbo run test --filter=@ampr/retry-utils",
+    "test:async-retry": "turbo run test --filter=@ampr/async-retry",
     "test:api": "turbo run test --filter=@ampr/api",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
