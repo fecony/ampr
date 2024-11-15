@@ -1,81 +1,89 @@
-# Turborepo starter
+# AMPR
 
-This is an official starter Turborepo.
+### Prerequisites
 
-## Using this example
+Before you begin, ensure you have met the following requirements:
 
-Run the following command:
+- Node.js installed ([node v20+](https://nodejs.org/en)).
+- [Git](https://git-scm.com/) installed.
 
-```sh
-npx create-turbo@latest
+### Getting Started
+
+Clone the project
+
+```bash
+git clone git@github.com:fecony/ampr.git
 ```
 
-## What's inside?
+Go to the project directory
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+cd ampr
 ```
 
-### Develop
+Install dependencies
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+npm install
 ```
 
-### Remote Caching
+### Task Overview
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+**Task 1 Code Location:**
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+- File: packages/fruit-machine/src/index.ts
+- Unit Test File: packages/fruit-machine/test/fruit-machine.test.ts
 
+**Task 2 Code Location:**
+
+- File: packages/async-retry/src/index.ts
+- Unit Test File: packages/async-retry/test/async-retry.test.ts
+
+**Task 3 Code Location:**
+
+- Files:
+  - apps/api/src/employed-people/employed-people.controller.ts
+  - apps/api/src/employed-people/employed-people.service.ts
+- Unit Test Files:
+  - apps/api/src/employed-people/employed-people.controller.spec.ts
+  - apps/api/src/employed-people/employed-people.service.spec.ts
+
+### Running Nest.js app
+
+```bash
+npm run dev
 ```
-cd my-turborepo
-npx turbo login
+
+### Running Tests with Turbo
+
+This guide explains how to run tests using Turbo, a tool for managing monorepos. You can run all tests or filter to run specific tests.
+
+#### Running All Tests
+
+To run all tests in your project, use the following command:
+
+```bash
+npm run test
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+#### Running Specific Tests
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+To run tests for a specific package, use the following command:
 
+Fruit Machine Tests
+
+```bash
+npm run test:fruit-machine
 ```
-npx turbo link
+
+Async Retry Tests
+
+```bash
+npm run test:async-retry
 ```
 
-## Useful Links
+API Tests
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+```bash
+npm run test:api
+```
